@@ -1,0 +1,19 @@
+<h1>
+	{{title}}
+</h1>
+<div class="m-5" *ngFor="let youtuber of youtubers">
+	<div *ngIf="youtuber.followers > 100000">
+		<div class="card" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-title">{{youtuber.name}}</h5>
+				<p class="card-text">{{youtuber.description}}</p>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">Followers : {{youtuber.followers}}</li>
+			</ul>
+			<div class="card-body">
+				<button type="button" class="btn btn-primary" (click)="Sub(youtuber.name)">Subscribe</button>
+			</div>
+		</div>
+	</div>
+</div>

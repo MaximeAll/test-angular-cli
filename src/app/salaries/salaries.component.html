@@ -1,0 +1,25 @@
+<div class="m-5">
+	<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+		<div class="form-group">
+			<label for="salaire">Salaire</label>
+			<input type="text" class="form-control" id="salaire" aria-describedby="salaire" placeholder="Entrer un salaire" formControlName="salary">
+			<small id="nomHelp" class="form-text text-muted">Entrer un salaire pour afficher le pourcentage de gens qui gagnent moins que ce salaire</small>
+		</div>
+		<button type="submit" class="btn btn-primary">Valider</button>
+	</form>
+	<div class="m-5" *ngIf="pourcentage">
+		<p>{{pourcentage}}% de la population est dans cette tranche de revenus</p>
+		<div class="card">
+			<div class="card-header">
+				Taux de change USD en EUR
+			</div>
+			<div class="card-body">
+				<blockquote class="blockquote mb-0">
+					<p>{{taux}}</p>
+					<footer class="blockquote-footer">Faites un voyage pour vous détendre
+					</footer>
+				</blockquote>
+			</div>
+		</div>
+	</div>
+</div>
